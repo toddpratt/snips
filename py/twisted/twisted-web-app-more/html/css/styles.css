@@ -1,0 +1,20 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+body{
+    font-size:10pt;
+    width:950px;
+    margin:auto;
+}
+
+a,a.link,a.visited,a.active{
+    color:#000000;
+    text-decoration:none;
+}
+
+.hidden{
+    display:none;
+}
+

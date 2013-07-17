@@ -1,0 +1,11 @@
+from carrot.connection import AMQPConnection
+from carrot.messaging import Publisher
+
+amqpconn = AMQPConnection(hostname='nuke', port=5672,
+                    userid="test1", password="pass1", vhost="/")
+
+publisher = Publisher(connection=amqpconn,
+                      exchange="fanout", routing_key="importer")
+publisher.send("message")
+publisher.close()
+

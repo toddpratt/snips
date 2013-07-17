@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type"
+                content="text/html; charset=iso-8859-1" />
+
+		<title>Stupidiculous</title>
+
+		<link type="text/css"
+                href="css/humanity/jquery-ui-1.8.5.custom.css"
+                rel="stylesheet" />	
+
+		<script type="text/javascript"
+                src="js/jquery-1.4.2.min.js">
+        </script>
+
+		<script type="text/javascript"
+                src="js/jquery-ui-1.8.5.custom.min.js">
+        </script>
+
+		<script type="text/javascript">
+            $(document).ready(function()
+            {
+                $("#new-node-dialog").dialog({
+                    modal: true,
+                    buttons: {
+                        OK: function(){
+                            $(this).dialog('close');
+                        },
+                        Cancel: function(){
+                            $(this).dialog('close');
+                        }
+                    }
+                });
+            });
+        </script>
+
+    </head>
+
+	<body>
+
+        <div id="new-node-dialog" title="Create New Node" style="display:none">
+            <table>
+                <tr><th>Title</th><td><input type="text" id="node-title" /></td></tr>
+                <tr><th>ID</th><td><input type="text" id="node-title" /></td></tr>
+            </table>
+        </div>
+
+	</body>
+</html>
+
+
+

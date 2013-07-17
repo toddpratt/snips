@@ -1,0 +1,19 @@
+from carrot.connection import AMQPConnection
+from carrot.messaging import Consumer
+
+amqpconn = AMQPConnection(hostname='nuke', port=5672,
+                    userid="test1", password="pass1", vhost="/")
+
+consumer = Consumer(connection=amqpconn, queue="scud",
+                    exchange="fanout", routing_key="importer")
+
+def import_feed_callback(message_data, message):
+    print str(message_data)
+    #feed_url = message_data["import feed"]
+    #print("Got feed import message for: %s" % feed_url)
+    # something importing this feed url
+    # import_feed(feed_url)
+    message.ack()
+consumer.register_callback(import_feed_callback)
+consumer.wait() # Go into the consumer loop.
+
